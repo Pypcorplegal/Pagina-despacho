@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pérez y Pérez Corporativo Legal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f0ede8;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: url('https://i.imgur.com/R1HgvdU.jpeg') no-repeat center center/cover;
+      color: #333333; /* gris oscuro */
+      text-align: center;
+      padding: 60px 20px 80px;
+      position: relative;
+      filter: brightness(0.95);
+    }
+    header > * {
+      position: relative;
+      z-index: 2;
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0.4);
+      z-index: 1;
+    }
+    .logo-container {
+      max-width: 180px;
+      margin: 0 auto 15px;
+      position: relative;
+      z-index: 2;
+    }
+    .logo-container img {
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(0 0 8px rgba(0,0,0,0.2));
+      border-radius: 12px;
+      background: white;
+      padding: 10px;
+    }
+    header h1 {
+      color: #333333; /* gris oscuro */
+      font-weight: 700;
+      font-size: 2.4rem;
+      margin: 0 0 8px;
+      position: relative;
+      z-index: 2;
+    }
+    header p {
+      color: #333333; /* gris oscuro */
+      font-weight: 600;
+      font-size: 1.3rem;
+      margin: 0;
+      position: relative;
+      z-index: 2;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #333;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+    nav a {
+      flex: 1;
+      text-align: center;
+      padding: 15px 0;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+      border-bottom: 3px solid transparent;
+    }
+    nav a.active,
+    nav a:hover {
+      background-color: #25d366;
+      color: white;
+      border-bottom: 3px solid #1ebe5d;
+    }
+    main {
+      flex: 1;
+      max-width: 900px;
+      margin: 40px auto 80px;
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+      padding: 30px 25px;
+    }
+    section {
+      display: none;
+    }
+    section.active {
+      display: block;
+    }
+    h2 {
+      margin-top: 0;
+      color: #1a1a1a;
+      font-weight: 700;
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    ul li {
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+    .contact-info p {
+      margin: 6px 0;
+      font-size: 1rem;
+    }
+    iframe {
+      width: 100%;
+      height: 280px;
+      border: none;
+      margin-top: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    form {
+      margin-top: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    form label {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    form input,
+    form textarea {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1.5px solid #ccc;
+      font-size: 1rem;
+      resize: vertical;
+      transition: border-color 0.3s;
+    }
+    form input:focus,
+    form textarea:focus {
+      border-color: #25d366;
+      outline: none;
+    }
+    form button {
+      background-color: #25d366;
+      color: white;
+      padding: 14px 28px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      align-self: flex-start;
+      transition: background-color 0.3s;
+    }
+    form button:hover {
+      background-color: #1ebe5d;
+    }
+    .social-links {
+      margin-top: 15px;
+      display: flex;
+      gap: 80px; /* más espacio entre los íconos */
+      font-size: 1.4rem;
+      justify-content: center;
+    }
+    .social-links a {
+      color: #1a1a1a;
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: color 0.3s;
+    }
+    .social-links a i {
+      font-size: 28px;
+    }
+    .social-links a:hover {
+      color: #25d366;
+    }
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      padding: 15px 22px;
+      border-radius: 50px;
+      font-weight: 700;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.22);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      z-index: 999;
+      transition: background-color 0.3s;
+    }
+    .whatsapp-btn:hover {
+      background-color: #1ebe5d;
+    }
+    .whatsapp-btn i {
+      font-size: 22px;
+    }
+    @media (max-width: 600px) {
+      nav a {
+        font-size: 0.9rem;
+        padding: 12px 0;
+      }
+      main {
+        margin: 30px 10px 60px;
+        padding: 20px 15px;
+      }
+      .social-links {
+        flex-direction: column;
+        gap: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-container">
+    <img src="https://i.imgur.com/R1HgvdU.jpeg" alt="Logo Pérez y Pérez" />
+  </div>
+  <h1>Pérez y Pérez Corporativo Legal</h1>
+  <p>Nuestra prioridad es tu bienestar</p>
+</header>
+
+<nav>
+  <a href="#" class="tab-link active" data-target="nosotros">Nosotros</a>
+  <a href="#" class="tab-link" data-target="servicios">Servicios</a>
+  <a href="#" class="tab-link" data-target="contacto">Contacto</a>
+  <a href="#" class="tab-link" data-target="redes">Redes</a>
+</nav>
+
+<main>
+  <section id="nosotros" class="active">
+    <h2>Nosotros</h2>
+    <p>En Pérez y Pérez Corporativo Legal,somos un equipo de abogados especializados en derecho laboral y seguridad social. Llevamos años defendiendo a trabajadores frente a abusos, despidos injustificados,acoso laboral, falta de prestaciones, pensiones mal calculadas y mucho mas .</p>
+  </section>
+
+  <section id="servicios">
+    <h2>Servicios</h2>
+    <ul>
+      <li>Derecho Colectivo</li>
+      <li>Derecho administrativo del trabajo</li>
+      <li>Seguridad social e instituto de fondo nacional de la vivienda para los trabajadores</li>
+      <li>Derecho individual del trabajo</li>
+      <li>Contratación de empleados</li>
+      <li>Desarrollo de la relación de trabajo</li>
+      <li>Terminación de la relación laboral</li>
+      <li>Contratos colectivos y de administración</li>
+      <li>Negociacion colectiva</li>
+      <li>Emplazamiento a huelga</li>
+      <li>Reglamentos internos de trabajo</li>
+      <li>Manuales y politicas</li>
+      <li>Seguridad e higiene en el trabajo</li>
+      <li>Planes de prevision social</li>
+      <li>Pensiones </li>
+      <li>Juicio de amparo</li>
+      <li>Otras</li>
+    </ul>
+  </section>
+
+  <section id="contacto">
+    <h2>Contáctanos</h2>
+    <div class="contact-info">
+      <p><strong>Teléfono móvil:</strong> +52 55 4041 8681</p>
+      <p><strong>Teléfono fijo:</strong> 55 1672 0636</p>
+      <p><strong>Email:</strong> ppcorporativolegal@gmail.com</p>
+      <p><strong>Dirección:</strong> Calle Canosas 172, Los Heroes Coacalco, 55712 San Francisco Coacalco, Méx.</p>
+    </div>
+
+    <form action="mailto:ppcorporativolegal@gmail.com" method="post" enctype="text/plain" onsubmit="return validarFormulario()">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="Nombre" required />
+      
+      <label for="correo">Correo electrónico:</label>
+      <input type="email" id="correo" name="Correo" required />
+      
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="Mensaje" rows="5" required></textarea>
+      
+      <button type="submit">Enviar</button>
+    </form>
+
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.250834346498!2d-99.06879498473741!3d19.606718586707166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2046dd1040df3%3A0x4a50a8b330d2bf31!2sCalle%20Canosas%20172%2C%20Los%20Heroes%20Coacalco%2C%2055712%20San%20Francisco%20Coacalco%2C%20M%C3%A9x.!5e0!3m2!1ses!2smx!4v1689031234567!5m2!1ses!2smx"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Ubicación en mapa"
+    ></iframe>
+  </section>
+
+  <section id="redes">
+    <h2>Síguenos en redes sociales</h2>
+    <div class="social-links">
+      <a href="https://www.instagram.com/PerezYPerezLegal" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+      <a href="https://www.tiktok.com/@PerezYPerezLegal" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-tiktok"></i> TikTok
+      </a>
+    </div>
+  </section>
+</main>
+
+<a href="https://wa.me/5518736869" target="_blank" class="whatsapp-btn" aria-label="WhatsApp Realiza tu consulta">
+  <i class="fab fa-whatsapp"></i> Realiza tu consulta
+</a>
+
+<script>
+  const tabs = document.querySelectorAll('.tab-link');
+  const sections = document.querySelectorAll('main section');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', e => {
+      e.preventDefault();
+      const target = tab.getAttribute('data-target');
+
+      // Remover active en tabs y secciones
+      tabs.forEach(t => t.classList.remove('active'));
+      sections.forEach(s => s.classList.remove('active'));
+
+      // Agregar active en tab y sección objetivo
+      tab.classList.add('active');
+      document.getElementById(target).classList.add('active');
+    });
+  });
+
+  function validarFormulario() {
+    const nombre = document.getElementById('nombre').value.trim();
+    const correo = document.getElementById('correo').value.trim();
+    const mensaje = document.getElementById('mensaje').value.trim();
+
+    if (!nombre || !correo || !mensaje) {
+      alert('Por favor, llena todos los campos.');
+      return false;
+    }
+    return true;
+  }
+</script>
+
+</body>
+</html>
