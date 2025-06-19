@@ -234,6 +234,48 @@
         gap: 25px;
       }
     }
+
+    /* Estilos específicos para Publicaciones */
+    #publicaciones {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #2c3e50; /* azul grisáceo elegante */
+    }
+
+    #publicaciones .logo-publicaciones {
+      max-width: 160px;
+      margin: 0 auto 25px;
+      text-align: center;
+    }
+
+    #publicaciones .logo-publicaciones img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(44, 62, 80, 0.25);
+      background: white;
+      padding: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    #publicaciones .logo-publicaciones img:hover {
+      transform: scale(1.05);
+    }
+
+    #publicaciones p {
+      margin-bottom: 16px;
+    }
+
+    #publicaciones ul {
+      margin-left: 20px;
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+    #publicaciones ul li {
+      margin-bottom: 10px;
+      font-weight: 500;
+      color: #34495e;
+    }
   </style>
 </head>
 <body>
@@ -251,6 +293,7 @@
   <a href="#" class="tab-link" data-target="servicios">Servicios</a>
   <a href="#" class="tab-link" data-target="capital-humano">Capital Humano</a>
   <a href="#" class="tab-link" data-target="contacto">Contacto</a>
+  <a href="#" class="tab-link" data-target="publicaciones">Publicaciones</a>
   <a href="#" class="tab-link" data-target="redes">Redes</a>
 </nav>
 
@@ -302,7 +345,7 @@
     <div class="contact-info">
       <p><strong>Dirección:</strong> Calle Canosas 172, Los Heroes Coacalco, 55712 San Francisco Coacalco, Méx.</p>
       <p><strong>Teléfono:</strong> 55 1873 6869</p>
-<p><strong>Email:</strong> contacto@pypcorplegal.com</p>
+      <p><strong>Email:</strong> contacto@pypcorplegal.com</p>
     </div>
     <iframe 
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.695099939903!2d-99.07379428509982!3d19.600327843040406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2042be67e43f3%3A0x8c9d41d2f99f5a4a!2sCalle%20Canosas%20172%2C%20Los%20H%C3%A9roes%20Coacalco%2C%2055712%20San%20Francisco%20Coacalco%2C%20M%C3%A9x.!5e0!3m2!1ses!2smx!4v1685627942703!5m2!1ses!2smx" 
@@ -321,6 +364,34 @@
     </form>
   </section>
 
+  <section id="publicaciones">
+    <h2>Publicaciones</h2>
+    <div class="logo-publicaciones">
+      <img src="https://i.ibb.co/Mw2Pwr8/logo-publicaciones.png" alt="Logo Publicaciones" />
+    </div>
+    <p>
+      El 19 de diciembre de 2024 se publicó, en el Diario Oficial de la Federación (DOF), una reforma y adición a diversas disposiciones de la Ley Federal del Trabajo, conocida como la "Ley Silla," enfocada en garantizar el derecho al descanso durante la jornada laboral.
+    </p>
+    <p>
+      La reforma es exigible a partir del 17 de junio de 2025, fecha a partir de la cual, las empresas deben contar con sillas con respaldo para los trabajadores que lo requieran para la prestación de sus servicios o descansos periódicos.
+    </p>
+    <p>
+      Los patrones tienen 180 días naturales desde la entrada en vigor del decreto para adecuar la documentación interna, así como las políticas y el reglamento interior de trabajo. El decreto entra en vigor el 17 de junio de 2025, por lo que las obligaciones de los patrones serán exigibles desde el 14 de diciembre de 2025.
+    </p>
+    <p>
+      A partir de la fecha mencionada, las empresas deberán estar en cumplimiento con lo siguiente:
+    </p>
+    <ul>
+      <li><strong>Provisión de asientos:</strong> contar con un número suficiente de asientos o sillas con respaldo para que todas las personas trabajadoras en los sectores de servicios, comercio y actividades análogas puedan utilizarlas, tanto para el desempeño de sus funciones como para descansos periódicos durante la jornada laboral.</li>
+      <li><strong>Ubicación adecuada:</strong> asegurar que los asientos o las sillas destinadas a los descansos periódicos estén ubicados en áreas específicas dentro de las instalaciones del lugar de trabajo, facilitando su acceso y uso adecuado por parte de los empleados.</li>
+      <li><strong>Evitar restricciones indebidas:</strong> prohibir cualquier práctica que obligue a las personas trabajadoras a permanecer de pie durante la totalidad de la jornada laboral o que les impida hacer uso de los asientos proporcionados mientras realizan sus labores.</li>
+      <li><strong>Regulación en el Reglamento Interior:</strong> incorporar en el Reglamento Interior de Trabajo los periodos de descanso obligatorios y las normas específicas que regulen el derecho de los empleados a usar los asientos o las sillas durante la jornada laboral, asegurando su cumplimiento.</li>
+    </ul>
+    <p>
+      El decreto señala que la Secretaría del Trabajo y Previsión Social deberá emitir las normas correspondientes sobre los factores de riesgo de trabajo en un plazo no mayor a 30 días naturales posteriores a su entrada en vigor.
+    </p>
+  </section>
+
   <section id="redes">
     <h2>Redes Sociales</h2>
     <div class="social-links">
@@ -331,7 +402,7 @@
         <i class="fab fa-tiktok"></i> TikTok
       </a>
     </div>
-  </section>
+</section>
 </main>
 
 <a href="https://wa.me/5518736869?text=Hola,%20quiero%20realizar%20mi%20consulta" class="whatsapp-btn" target="_blank" rel="noopener" aria-label="Enviar mensaje por WhatsApp">
