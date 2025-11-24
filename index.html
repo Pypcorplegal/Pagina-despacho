@@ -21,7 +21,7 @@ URL:       www.plyfly.net
    <Group description="Page Text" selector="body">
      <Variable name="body.font" description="Font" type="font"
          default="normal normal 13px 'Trebuchet MS',Trebuchet,sans-serif" value="normal normal 13px Lato"/>
-          <Variable name="body.text.color" description="Text Color" type="color" default="#bbbbbb" value="#000000"/>
+          <Variable name="body.text.color" description="Text Color" type="color" default="#bbbbbb" value="#ffffff"/>
    </Group>
 
    <Group description="Backgrounds" selector=".body-fauxcolumns-outer">
@@ -43,7 +43,7 @@ URL:       www.plyfly.net
 
    <Group description="Blog Description" selector=".header .description">
           <Variable name="description.text.color" description="Description Color" type="color"
-         default="$(body.text.color)"  value="#000000"/>
+         default="$(body.text.color)"  value="#ffffff"/>
    </Group>
 
    <Group description="Tabs Text" selector=".tabs-inner .widget li a">
@@ -61,7 +61,7 @@ URL:       www.plyfly.net
    <Group description="Date Header" selector=".main-inner h2.date-header">
      <Variable name="date.font" description="Font" type="font"
          default="normal normal 14px 'Trebuchet MS',Trebuchet,sans-serif" value="normal normal 14px &#39;Trebuchet MS&#39;,Trebuchet,sans-serif"/>
-          <Variable name="date.text.color" description="Text Color" type="color" default="$(body.text.color)" value="#000000"/>
+          <Variable name="date.text.color" description="Text Color" type="color" default="$(body.text.color)" value="#ffffff"/>
    </Group>
 
    <Group description="Post Title" selector="h3.post-title a">
@@ -86,11 +86,11 @@ URL:       www.plyfly.net
    <Group description="Gadget Text" selector=".footer-inner .widget, .sidebar .widget">
      <Variable name="widget.font" description="Font" type="font"
         default="$(body.font)" value="normal normal 13px Lato"/>
-          <Variable name="widget.text.color" description="Text Color" type="color" default="$(body.text.color)" value="#000000"/>
+          <Variable name="widget.text.color" description="Text Color" type="color" default="$(body.text.color)" value="#ffffff"/>
    </Group>
 
    <Group description="Gadget Links" selector=".sidebar .widget">
-          <Variable name="widget.link.color" description="Link Color" type="color" default="$(body.text.color)" value="#000000"/>
+          <Variable name="widget.link.color" description="Link Color" type="color" default="$(body.text.color)" value="#ffffff"/>
      <Variable name="widget.link.visited.color" description="Visited Color" type="color" default="$(link.visited.color)" value="#539bcd"/>
      <Variable name="widget.alternate.text.color" description="Alternate Color" type="color" default="#ffffff" value="#ffffff"/>
    </Group>
@@ -362,7 +362,7 @@ h3.post-title a:hover {
 
 .comments .comments-content .icon.blog-author {
   background-repeat: no-repeat;
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEgAACxIB0t1+/AAAAAd0SU1FB9sLFwMeCjjhcOMAAAD+SURBVDjLtZSvTgNBEIe/WRRnm3U8RC1neQdsm1zSBIU9VVF1FkUguQQsD9ITmD7ECZIJSE4OZo9stoVjC/zc7ky+zH9hXwVwDpTAWWLrgS3QAe8AZgaAJI5zYAmc8r0G4AHYHQKVwII8PZrZFsBFkeRCABYiMh9BRUhnSkPTNCtVXYXURi1FpBDgArj8QU1eVXUzfnjv7yP7kwu1mYrkWlU33vs1QNu2qU8pwN0UpKoqokjWwCztrMuBhEhmh8bD5UDqur75asbcX0BGUB9/HAMB+r32hznJgXy2v0sGLBcyAJ1EK3LFcbo1s91JeLwAbwGYu7TP/3ZGfnXYPgAVNngtqatUNgAAAABJRU5ErkJggg==);
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEgAACxIB0t1+/AAAAAd0SU1FB9sLFwMeCjjhcOMAAAD+SURBVDjLtZSvTgNBEIe/WRRnm3U8RC1neQdsm1zSBIU9VVF1FkUguQQsD9ITmD7ECZIJSE4OZo9stoVjC/zc7ky+zH9hXwVwDpTAWWLrgS3QAe8AZgaAJI5zYAmc8r0G4AHYHQKVwII8PZrZFsBFkeRCABYiMh9BRUhnSkPTNCtVXYXURi1FpBDgArj8QU1eVXUzfnjv3yP7kwu1mYrkWlU33vs1QNu2qU8pwN0UpKoqokjWwCztrMuBhEhmh8bD5UDqur75asbcX0BGUB9/HAMB+r32hznJgXy2v0sGLBcyAJ1EK3LFcbo1s91JeLwAbwGYu7TP/3ZGfnXYPgAVNngtqatUNgAAAABJRU5ErkJggg==);
 }
 
 .comments .comments-content .loadmore a {
@@ -790,7 +790,7 @@ head.appendChild(script);
             <b:widget-setting name='homeTitle'>Página Principal</b:widget-setting>
           </b:widget-settings>
           <b:includable id='main'>
-  <b:if cond='data:title != ""'><h2><data:title/></h2></b:if>
+  <b:if cond='data:title != ""'><h2><data:title/> </h2></b:if>
   <div class='widget-content'>
     <b:if cond='data:mobile'>
       <select expr:id='data:widget.instanceId + "_select"'>
